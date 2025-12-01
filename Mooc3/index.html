@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #ddd;
+            border: 3px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .preview {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #666;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .preview:hover {
+            transform: scale(1.05);
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Photo Gallery</h1>
+    
+    <div id="image">Hover over an image below to display here.</div>
+    
+    <div class="gallery">
+        <img 
+            class="preview" 
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" 
+            alt="Beautiful mountain landscape with snow-capped peaks"
+            onmouseover="upDate(this)"
+            onmouseout="undo()"
+        >
+        <img 
+            class="preview" 
+            src="https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=400&h=300&fit=crop" 
+            alt="Tropical beach with crystal clear water"
+            onmouseover="upDate(this)"
+            onmouseout="undo()"
+        >
+        <img 
+            class="preview" 
+            src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400&h=300&fit=crop" 
+            alt="Green forest with sunlight filtering through trees"
+            onmouseover="upDate(this)"
+            onmouseout="undo()"
+        >
+        <img 
+            class="preview" 
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=300&fit=crop" 
+            alt="Desert landscape with orange sand dunes"
+            onmouseover="upDate(this)"
+            onmouseout="undo()"
+        >
+        <img 
+            class="preview" 
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop" 
+            alt="Rocky mountain peak during sunset"
+            onmouseover="upDate(this)"
+            onmouseout="undo()"
+        >
+        <img 
+            class="preview" 
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop" 
+            alt="Calm lake reflecting cloudy sky"
+            onmouseover="upDate(this)"
+            onmouseout="undo()"
+        >
+    </div>
+
+    <script>
+        // Function to update the main display when hovering over an image
+        function upDate(previewPic) {
+            // Step 1: Log to console to verify the function is triggered
+            console.log("upDate function triggered");
+            
+            // Step 2: Log information about the image
+            console.log("Alt text:", previewPic.alt);
+            console.log("Source:", previewPic.src);
+            
+            // Step 3: Get the element with id "image"
+            const imageDiv = document.getElementById('image');
+            
+            // Step 4: Change the text to the alt text of the hovered image
+            imageDiv.innerHTML = previewPic.alt;
+            
+            // Step 5: Change the background image to the source of the hovered image
+            imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+            
+            // Additional logging to verify changes
+            console.log("Background image updated to:", previewPic.src);
+        }
+
+        // Function to restore the original state when mouse leaves an image
+        function undo() {
+            // Log to console to verify the function is triggered
+            console.log("undo function triggered");
+            
+            // Get the element with id "image"
+            const imageDiv = document.getElementById('image');
+            
+            // Reset the background image to empty
+            imageDiv.style.backgroundImage = "url('')";
+            
+            // Reset the text to the original message
+            imageDiv.innerHTML = "Hover over an image below to display here.";
+            
+            // Log to verify reset
+            console.log("Display reset to original state");
+        }
+    </script>
+</body>
+</html>
