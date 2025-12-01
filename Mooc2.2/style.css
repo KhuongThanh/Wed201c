@@ -1,0 +1,99 @@
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  background: yellow;
+  padding: 5px;
+  z-index: 1000;
+  text-decoration: none;
+  color: black;
+}
+
+/* HEADER */
+header {
+  background-color: #4CAF50;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* NAVIGATION */
+nav {
+  display: inline-block;
+  width: 80%;
+  background-color: #333;
+  padding: 10px;
+}
+
+nav img {
+  width: 10%;
+}
+
+/* Commenting out li styles from HW1 */
+/*
+li {
+  display: inline-block;
+  width: 120px;
+}
+*/
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 20px;
+}
+
+.grid img {
+  width: 100%;
+}
+
+/* FLEX */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* FOOTER */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* HEADINGS */
+h1 {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #333333;
+}
+
+/* PARAGRAPHS */
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
